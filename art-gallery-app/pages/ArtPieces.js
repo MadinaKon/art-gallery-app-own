@@ -1,7 +1,8 @@
 import React from "react";
+import ArtPiecePreview from "./ArtPiecePreview";
 
 export default function ArtPieces({ pieces }) {
-  console.log("ArtPieces pieces ", pieces);
+  // console.log("ArtPieces pieces ", pieces);
 
   return (
     <ul>
@@ -16,7 +17,12 @@ export default function ArtPieces({ pieces }) {
           colors,
           dimensions,
         }) => (
-          <li key={slug}>{artist}</li>
+          <li key={slug}>
+            {artist}
+            {name} {year}
+            {genre}
+            <ArtPiecePreview image={imageSource} title={name} artist={artist} />
+          </li>
         )
       )}
     </ul>
